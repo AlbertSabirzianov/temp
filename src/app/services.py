@@ -84,10 +84,12 @@ class CommandUnitOfWork(ABSUnitOfWorkService):
             name=self.name,
             temp=new_temp
         )
+        print(f"Template {self.name} saved successfully!")
 
     def rm(self) -> None:
         self.__check_name()
         self.template_repository.delete_template(self.name)
+        print(f"Template {self.name} removed successfully!")
 
     def paste(self) -> None:
         self.__check_name()
@@ -96,4 +98,4 @@ class CommandUnitOfWork(ABSUnitOfWorkService):
             path=self.command_line_path,
             template=temp
         )
-
+        print(f"Template {self.name} pasted successfully!")
