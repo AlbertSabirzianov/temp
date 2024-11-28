@@ -25,10 +25,32 @@ class ABCTemplateRepository(ABC):
 class ABCTemplateService(ABC):
 
     @abstractmethod
-    def get_template_from_absolute_path(self, path: str) -> Directory:
+    def get_template_from_absolute_path(self, path: str, name: str) -> Directory:
         raise NotImplementedError
 
     @abstractmethod
     def paste_template_to_path(self, path: str, template: Directory) -> None:
         raise NotImplementedError
 
+
+class ABSUnitOfWorkService(ABC):
+
+    @abstractmethod
+    def ls(self) -> None:
+        raise NotImplementedError
+
+    @abstractmethod
+    def see(self) -> None:
+        raise NotImplementedError
+
+    @abstractmethod
+    def add(self) -> None:
+        raise NotImplementedError
+
+    @abstractmethod
+    def rm(self) -> None:
+        raise NotImplementedError
+
+    @abstractmethod
+    def paste(self) -> None:
+        raise NotImplementedError

@@ -11,3 +11,7 @@ class Commands(Enum):
     @classmethod
     def all_commands(cls) -> list[str]:
         return [command.value for command in cls]
+
+
+class ErrorCodes(Enum):
+    DIRECTORY_ALREADY_EXISTS = 17
